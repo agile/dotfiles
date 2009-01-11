@@ -1,0 +1,1 @@
+/home/mike/projects/vim-git/ftplugin/gitconfig.vim

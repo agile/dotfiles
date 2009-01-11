@@ -1,0 +1,43 @@
+# inspired by fowlduck's http://gist.github.com/4477
+# unfortuneately if I echo ansi codes it messes with line wrapping on the command line, 
+# guessing because unlike ansi codes in a VAR it doesn't know the real size of the string when echo'd :(
+# doesn't matter if the codes are set using tput or straight up raw ansi
+function git_prompt {
+  BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"`
+  if [ -n "${BRANCH}" ]; then
+    echo -en "(${BRANCH})"
+  fi
+}
+
+# TODO: find and show svn branch/tag, hg branch would be nice too, bzr?
+# this is not functional but kind of what I's thinking.. 
+#function svn_prompt {
+#  if [ -d ".svn" ]; then
+#    URL=`svn info 2> /dev/null | grep URL`
+#    case "${URL}" in
+#      *trunk) BRANCH=trunk;;
+#      *branches) BRANCH=${URL%%branches/}
+#      *tags) BRANCH=${URL%%tags/}
+#    esac
+#}
+
+function myprompt {
+  local   NUTTN="\[\033[0m\]"
+  local    BLUE="\[\033[0;34m\]"
+  local   GREEN="\[\033[0;32m\]"
+  local    CYAN="\[\033[1;36m\]"
+  local     RED="\[\033[0;31m\]"
+  local   WHITE="\[\033[0;37m\]"
+  local    BRED="\[\033[1;31m\]"
+  local  BGREEN="\[\033[1;32m\]"
+  local  BWHITE="\[\033[1;37m\]"
+
+  #PS1="$NUTTN\u@\h:\w\[\$(git_prompt)\$BRANCH\]$WHITE\$$NUTTN "
+  #PS1="\u@\h:\w\$(git_prompt)\$ "
+
+  #PS1="${NUTTN}${GREEN}\u@\h:\w${NUTTN}${CYAN}\$(git_prompt)${WHITE}\$${NUTTN} "
+  PS1="${NUTTN}${GREEN}\u@\h:\w${NUTTN}${CYAN}\$(__git_ps1)${WHITE}\$${NUTTN} "
+}
+
+myprompt
+

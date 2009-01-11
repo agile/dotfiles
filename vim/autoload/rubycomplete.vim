@@ -1,0 +1,1 @@
+/home/mike/ftw/vim-ruby/autoload/rubycomplete.vim

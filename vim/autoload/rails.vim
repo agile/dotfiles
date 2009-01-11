@@ -1,0 +1,1 @@
+/home/mike/ftw/vim-rails/autoload/rails.vim
