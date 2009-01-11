@@ -1,15 +1,25 @@
-#!/usr/bin/env ruby
-
+#!/bin/sh
+# 
 # from http://errtheblog.com/posts/89-huba-huba
+# Link dot files back into place
 
-home = File.expand_path('~')
-
-Dir['*'].each do |file|
-  next if file =~ /install/
-  target = File.join(home, ".#{file}")
-  `ln -s #{File.expand_path file} #{target}`
-end
+for i in `ls -1`; do 
+  DEST="${HOME}/.${i}"
+  if [ "$i" != "install" ] && [ ! -L "${DEST}" ]; then
+    if [ -f ${DEST} ] || [ -d ${DEST} ]; then
+      echo "Moved existing file or dir to ${DEST}.orig"
+      mv -f ${DEST} ${DEST}.orig
+    fi
+    echo "Added link for ${DEST}"
+    ln -nfs "${PWD}/${i}" "${DEST}"
+  fi
+done
 
 # git push on commit
-`echo 'git push' > .git/hooks/post-commit`
-`chmod 755 .git/hooks/post-commit`
+HOOK=.git/hooks/post-commit
+#grep 'git push' ${HOOK} >/dev/null 2>&1
+#if [ $? ]; then
+  echo 'git push' > .git/hooks/post-commit
+  chmod 755 .git/hooks/post-commit
+  #echo "installed post-commit hook to push after committing"
+#fi
