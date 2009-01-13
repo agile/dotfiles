@@ -27,7 +27,7 @@ set ignorecase
 set wildmenu
 set wildmode=list:longest,full
 set mouse=a
-set ballooneval
+"set ballooneval
 
 " cool for the console, which I never use, but f's up the gui.. I should
 " really have separate configs
