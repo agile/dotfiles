@@ -1,1 +1,1 @@
-/home/mike/projects/vim-git/syntax/gitrebase.vim
+../../linked_modules/vim-git/syntax/gitrebase.vim

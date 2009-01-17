@@ -1,1 +1,1 @@
-/home/mike/projects/vim-git/ftplugin/gitrebase.vim
+../../linked_modules/vim-git/ftplugin/gitrebase.vim

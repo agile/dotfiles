@@ -1,1 +1,1 @@
-/home/mike/projects/vim-git/syntax/gitconfig.vim
+../../linked_modules/vim-git/syntax/gitconfig.vim

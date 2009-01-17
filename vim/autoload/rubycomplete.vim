@@ -1,1 +1,1 @@
-/home/mike/ftw/vim-ruby/autoload/rubycomplete.vim
+../../linked_modules/vim-ruby/autoload/rubycomplete.vim

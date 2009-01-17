@@ -1,1 +1,1 @@
-/home/mike/projects/vim-git/syntax/gitcommit.vim
+../../linked_modules/vim-git/syntax/gitcommit.vim

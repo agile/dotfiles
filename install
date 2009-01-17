@@ -2,10 +2,15 @@
 # 
 # from http://errtheblog.com/posts/89-huba-huba
 # Link dot files back into place
+#
+# TODO:
+# Make a linked directory, skip it in the linking process
+# Use linked directory to add vim-rails, vim-ruby, etc as submodules
+# sym link linked parts back into the places they need to go
 
 for i in `ls -1`; do 
   DEST="${HOME}/.${i}"
-  if [ "$i" != "install" ] && [ ! -L "${DEST}" ]; then
+  if [ "$i" != "install" ] && [ "$i" != "linked_modules" ] && [ ! -L "${DEST}" ]; then
     if [ -f ${DEST} ] || [ -d ${DEST} ]; then
       echo "Moved existing file or dir to ${DEST}.orig"
       mv -f ${DEST} ${DEST}.orig

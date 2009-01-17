@@ -1,1 +1,1 @@
-/home/mike/projects/vim-git/ftplugin/gitsendemail.vim
+../../linked_modules/vim-git/ftplugin/gitsendemail.vim

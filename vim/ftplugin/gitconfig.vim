@@ -1,1 +1,1 @@
-/home/mike/projects/vim-git/ftplugin/gitconfig.vim
+../../linked_modules/vim-git/ftplugin/gitconfig.vim

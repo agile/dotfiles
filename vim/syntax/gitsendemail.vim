@@ -1,1 +1,1 @@
-/home/mike/projects/vim-git/syntax/gitsendemail.vim
+../../linked_modules/vim-git/syntax/gitsendemail.vim

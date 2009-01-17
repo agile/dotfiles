@@ -1,1 +1,1 @@
-/home/mike/projects/vim-git/indent/gitconfig.vim
+../../linked_modules/vim-git/indent/gitconfig.vim
