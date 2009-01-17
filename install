@@ -10,7 +10,7 @@
 
 for i in `ls -1`; do 
   DEST="${HOME}/.${i}"
-  if [ "$i" != "install" ] && [ "$i" != "linked_modules" ] && [ ! -L "${DEST}" ]; then
+  if [ "$i" != "install" ] && [ "$i" != "linked_modules" ] && [ "$i" != "README" ] && [ ! -L "${DEST}" ]; then
     if [ -f ${DEST} ] || [ -d ${DEST} ]; then
       echo "Moved existing file or dir to ${DEST}.orig"
       mv -f ${DEST} ${DEST}.orig
