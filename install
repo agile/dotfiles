@@ -8,6 +8,14 @@
 # Use linked directory to add vim-rails, vim-ruby, etc as submodules
 # sym link linked parts back into the places they need to go
 
+echo "Updating/initializing submodules"
+git submodule init
+git submodule update
+for i in `ls -1d linked_modules/*.svn`; do
+  echo "updating $i svn repo"
+  svn up $i
+done
+
 for i in `ls -1`; do 
   DEST="${HOME}/.${i}"
   if [ "$i" != "install" ] && [ "$i" != "linked_modules" ] && [ "$i" != "README" ] && [ ! -L "${DEST}" ]; then

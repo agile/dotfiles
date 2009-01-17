@@ -2,10 +2,19 @@ My common dot files...
 
 Setting Up
 ----------
-Run the install script to have them linked into place. The script will move any
-existing files to an .orig extension so your orginal files should still be 
-intact. It will also only create the symlink if the files are not already
-symlinks.
+Run the install script to have them linked into place. 
+
+The script will intialize and update the submodules and svn repos for you.
+It will also move any existing files to an .orig extension so your orginal 
+files should still be intact. It will also only create the symlink if the 
+files are not already symlinks.
+
+NOTE:
+-----
+These are *my* dot files so for example, the gitconfig has my name and email
+in it. If you are not me, I would advise at least editing that file with your
+own credentials. It's the only one off the top of my head but I would advise 
+looking the others over anyway.
 
 linked_modules
 --------------
