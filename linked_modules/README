@@ -1,0 +1,21 @@
+This is my 'vendor' directory
+
+I keep third party repos of scripts and files checked out in here as submodules or svn repos and 
+then symlink them back into the parent directory with relative symlinks. 
+
+To update/initialize them, just..
+
+  git submodule update --init
+
+To update them from their upstream
+
+  # if it's an svn repo, just svn up the path
+
+  # else if it's a git submodule..
+  cd path && git checkout origin/master && git pull 
+
+  # if everything's nice and you want to make that stick
+  # BE SURE THERE'S NO TRAILING SLASH.. or you'll overwrite the submodule with the actual files
+  cd .. && git add path && git commit
+
+

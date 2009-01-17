@@ -1,0 +1,17 @@
+My common dot files...
+
+Setting Up
+----------
+Run the install script to have them linked into place. The script will move any
+existing files to an .orig extension so your orginal files should still be 
+intact. It will also only create the symlink if the files are not already
+symlinks.
+
+linked_modules
+--------------
+This is a mount point for 3rd party repositories and thier files are symlinked
+back into the paths of the dotfiles directory. I maintain the symlinks manually
+as there are a case or two where I use my own version instead of upstream's.
+
+
+mike@cryingwhilecoding.com
