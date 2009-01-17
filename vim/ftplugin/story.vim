@@ -2,6 +2,8 @@
 " Language:	Rspec plain text story format
 " Maintainer:	Mike Vincent <mike@vincent.ws>
 " Last Change:	2008 Feb 08
+" DEPRECATED: Use Tim Pope's vim-cucumber plugin instead, 
+"             http://github.com/tpope/vim-cucumber/tree
 
 " Only do this when not done yet for this buffer
 if (exists("b:did_ftplugin"))

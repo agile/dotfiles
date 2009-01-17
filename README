@@ -14,4 +14,11 @@ back into the paths of the dotfiles directory. I maintain the symlinks manually
 as there are a case or two where I use my own version instead of upstream's.
 
 
+TODO
+----
+Maybe add the NERDSnippits plugin
+scrooloose's vimfiles is full of things to study
+http://github.com/scrooloose/vimfiles/tree/master
+
+
 mike@cryingwhilecoding.com

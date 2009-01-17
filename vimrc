@@ -29,6 +29,12 @@ set wildmode=list:longest,full
 set mouse=a
 "set ballooneval
 
+"map Q to something useful
+noremap Q gq
+ 
+"make Y consistent with C and D
+nnoremap Y y$
+
 " cool for the console, which I never use, but f's up the gui.. I should
 " really have separate configs
 "if $COLORTERM == 'gnome-terminal'
@@ -38,9 +44,16 @@ set mouse=a
 "    colorscheme brookstream
 "endif 
 
-" last-position-jump
-" Jump to the last known cursor position in the file
-au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+"jump to last cursor position when opening a file
+"dont do it when writing a commit log entry
+autocmd BufReadPost * call SetCursorPosition()
+function! SetCursorPosition()
+    if &filetype !~ 'commit\c'
+        if line("'\"") > 0 && line("'\"") <= line("$")
+            exe "normal g`\""
+        endif
+    end
+endfunction
 
 
 map <F1> :set gfn=<CR>:colorscheme brookstream<CR>
