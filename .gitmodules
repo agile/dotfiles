@@ -7,3 +7,15 @@
 [submodule "linked_modules/vim-git"]
 	path = linked_modules/vim-git
 	url = git://git.tpope.net/vim-git.git
+[submodule "linked_modules/vim-scmdiff"]
+	path = linked_modules/vim-scmdiff
+	url = git://github.com/agile/vim-scmdiff.git
+[submodule "linked_modules/vim-cucumber"]
+	path = linked_modules/vim-cucumber
+	url = git://github.com/tpope/vim-cucumber.git
+[submodule "linked_modules/nerdcommenter"]
+	path = linked_modules/nerdcommenter
+	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "linked_modules/nerdtree"]
+	path = linked_modules/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
