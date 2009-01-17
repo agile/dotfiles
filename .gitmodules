@@ -1,0 +1,9 @@
+[submodule "linked_modules/vim-ruby"]
+	path = linked_modules/vim-ruby
+	url = git://github.com/vim-ruby/vim-ruby.git
+[submodule "linked_modules/vim-rails"]
+	path = linked_modules/vim-rails
+	url = git://github.com/tpope/vim-rails.git
+[submodule "linked_modules/vim-git"]
+	path = linked_modules/vim-git
+	url = git://git.tpope.net/vim-git.git

@@ -1,1 +1,1 @@
-/home/mike/ftw/vim-ruby/compiler/ruby.vim
+../../linked_modules/vim-ruby/compiler/ruby.vim

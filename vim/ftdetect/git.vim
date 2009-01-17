@@ -1,1 +1,1 @@
-/home/mike/projects/vim-git/ftdetect/git.vim
+../../linked_modules/vim-git/ftdetect/git.vim

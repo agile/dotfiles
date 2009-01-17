@@ -1,0 +1,1 @@
+../../linked_modules/vim-git/ftplugin/git.vim

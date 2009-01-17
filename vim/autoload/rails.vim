@@ -1,1 +1,1 @@
-/home/mike/ftw/vim-rails/autoload/rails.vim
+../../linked_modules/vim-rails/autoload/rails.vim
