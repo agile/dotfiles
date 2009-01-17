@@ -1,0 +1,33 @@
+[user]
+	name = Mike Vincent
+	email = mike@cryingwhilecoding.com
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[diff]
+  rename = copy
+  color = auto
+[apply]
+  whitespace = strip
+[pager] 
+  color = true
+[status]
+  color = auto
+[alias]
+  co = "checkout"
+  #ci = "commit -a -v"
+  ci = "commit"
+  unmerge = "reset --hard ORIG_HEAD"
+  lsbr = "branch -a"
+  lstag = "tag -l"
+  lsrem = "remote"
+  st = "status"
+  stat = "status"
+  spull = !git svn fetch && git svn rebase # fetch and rebase from svn repository
+  spush = !git svn dcommit # push keeping each local commit as atomic.
+  rlog = log --pretty=format:\"%h %Cblue%cr%Creset %cn %Cgreen%s%Creset\"
+[giggle]
+	compact-mode = false
+	main-window-maximized = false
+	main-window-geometry = 1439x875+386+25
