@@ -14,3 +14,9 @@ alias grep='grep --colour=auto'
 #set -o vi
 #bind '"\t":menu-complete'
 
+
+if [ "${HOSTNAME}" == 'dirtyhippie' ]; then
+  keychain ~/.ssh/id_dsa
+  source ~/.keychain/$(hostname)-sh
+fi
+
