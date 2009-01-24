@@ -118,6 +118,7 @@ end if ENV['RAILS_ENV']
 
 def see_logs
   ActiveRecord::Base.logger = Logger.new(STDOUT)
+  ActiveRecord::Base.connection_pool.clear_reloadable_connections!
 end
 
 module Kernel
