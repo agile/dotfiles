@@ -1,8 +1,8 @@
 "=============================================================================
 " File: gist.vim
 " Author: Yasuhiro Matsumoto <mattn.jp@gmail.com>
-" Last Change: 24-Dec-2008. Jan 2008
-" Version: 1.6
+" Last Change: 23-Jan-2009. Jan 2008
+" Version: 1.7
 " Usage:
 "
 "   :Gist
@@ -17,6 +17,9 @@
 "   :Gist XXXXX
 "     edit gist XXXXX.
 "
+"   :Gist -c XXXXX.
+"     get gist XXXXX and put to clipboard.
+"  
 "   :Gist -l
 "     list gists from mine.
 "
@@ -27,7 +30,8 @@
 "     list gists from all.
 "
 " Tips:
-"   * if set g:gist_clip_command, gist.vim will copy the gist code.
+"   * if set g:gist_clip_command, gist.vim will copy the gist code
+"       with option '-c'.
 "
 "     # mac
 "     let g:gist_clip_command = 'pbcopy'
@@ -139,7 +143,7 @@ function! s:GistDetectFiletype(gistid)
   endif
 endfunction
 
-function! s:GistGet(user, token, gistid)
+function! s:GistGet(user, token, gistid, clipboard)
   let url = 'http://gist.github.com/'.a:gistid.'.txt'
   exec 'silent split gist:'.a:gistid
   filetype detect
@@ -150,17 +154,21 @@ function! s:GistGet(user, token, gistid)
   if (&ft == '' && g:gist_detect_filetype == 1) || g:gist_detect_filetype == 2
     call s:GistDetectFiletype(a:gistid)
   endif
-  if exists('g:gist_clip_command')
-    exec 'silent w !'.g:gist_clip_command
+  if a:clipboard
+    if exists('g:gist_clip_command')
+      exec 'silent w !'.g:gist_clip_command
+    else
+      normal! ggVG"+y
+    endif
   endif
 endfunction
 
 function! s:GistListAction()
   let line = getline('.')
-  let mx = '^gist: \(\w\+\) .*'
+  let mx = '^gist: \(\w\+\).*'
   if line =~# mx
     let gistid = substitute(line, mx, '\1', '')
-    call s:GistGet(g:github_user, g:github_token, gistid)
+    call s:GistGet(g:github_user, g:github_token, gistid, 0)
   endif
 endfunction
 
@@ -175,7 +183,7 @@ function! s:GistPut(user, token, content, private)
     \ 'login=%s',
     \ 'token=%s',
     \ ]
-  if len(a:private)
+  if a:private
     call add(query, 'private=on')
   endif
   let squery = printf(join(query, '&'),
@@ -208,31 +216,43 @@ function! Gist(line1, line2, ...)
     let g:github_token = substitute(system('git config --global github.token'), "\n", '', '')
   endif
 
-  let opt = (a:0 > 0) ? substitute(a:1, ' ', '', 'g') : ''
-  let private = ''
   let gistid = ''
   let gistls = ''
-  let listmx = '^\(-l\|--list\)\s*\([^\s]\+\)\?$'
-  if opt =~ '^\(-la\|--listall\)'
-    let gistls = '-all'
-  elseif opt =~ listmx
-    let gistls = substitute(opt, listmx, '\2', '')
-    if len(gistls) == 0
-      let gistls = g:github_user
+  let private = 0
+  let clipboard = 0
+
+  let args = (a:0 > 0) ? split(a:1, ' ') : []
+  for arg in args
+    let listmx = '^\(-l\|--list\)\s*\([^\s]\+\)\?$'
+    if arg =~ '^\(-la\|--listall\)'
+      let gistls = '-all'
+    elseif arg =~ listmx
+      let gistls = substitute(arg, listmx, '\2', '')
+      if len(gistls) == 0
+        let gistls = g:github_user
+      endif
+    elseif arg =~ '-p\|--private'
+      let private = 1
+    elseif arg =~ '^\w\+$'
+      let gistid = arg
+    elseif arg =~ '-c\|--clipboard'
+      let clipboard = 1
+    elseif len(arg) > 0
+      echoerr 'Invalid arguments'
+      unlet args
+      return
     endif
-  elseif opt =~ '-p\|--private'
-    let private = 'on'
-  elseif opt =~ '^\w\+$'
-    let gistid = opt
-  elseif len(opt) > 0
-    echoerr 'Invalid arguments'
-    return
-  endif
+  endfor
+  unlet args
+  "echo "gistid=".gistid
+  "echo "gistls=".gistls
+  "echo "private=".private
+  "echo "clipboard=".clipboard
 
   if len(gistls) > 0
     call s:GistList(g:github_user, g:github_token, gistls)
   elseif len(gistid) > 0
-    call s:GistGet(g:github_user, g:github_token, gistid)
+    call s:GistGet(g:github_user, g:github_token, gistid, clipboard)
   else
     let content = join(getline(a:line1, a:line2), "\n")
     call s:GistPut(g:github_user, g:github_token, content, private)
