@@ -1,5 +1,4 @@
 export EDITOR='vim'
-export VISUAL='gvim -f'
 export CVS_RSH='ssh'
 export CDPATH='.:/home/mike/Desktop:/var/www/sites:/usr/src:~'
 
@@ -18,5 +17,6 @@ alias grep='grep --colour=auto'
 if [ "${HOSTNAME}" == 'dirtyhippie' ]; then
   keychain ~/.ssh/id_dsa
   source ~/.keychain/$(hostname)-sh
+  export VISUAL='gvim -f'
 fi
 
