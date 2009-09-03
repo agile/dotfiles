@@ -89,17 +89,17 @@ end
 
 # Add `ri` support in irb
 def ri arg
-  puts `ri #{arg}`
+  puts `qri #{arg}`
 end
 
 class Module
   def ri(meth=nil)
     if meth
       if instance_methods(false).include? meth.to_s
-        puts `ri #{self}##{meth}`
+        puts `qri #{self}##{meth}`
       end
     else
-      puts `ri #{self}`
+      puts `qri #{self}`
     end
   end
 end

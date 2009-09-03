@@ -27,9 +27,9 @@ au BufNewFile,BufRead *_spec.rb 	compiler rubyspec |set ft=ruby
 " doing it without the silent will allow you to see all the output, a little noisier
 "au BufWritePost */unit/*_test.rb :make test_units |silent clist|copen
 "au BufWritePost */functional/*_test.rb :make test_functional |silent clist|copen
-au BufWritePost */unit/*_test.rb :make % |silent clist|copen
-au BufWritePost */functional/*_test.rb :make % |silent clist|copen
-au BufWritePost */test/*test*.rb :make % |silent clist|copen
+" au BufWritePost */unit/*_test.rb :make % |silent clist|copen
+" au BufWritePost */functional/*_test.rb :make % |silent clist|copen
+" au BufWritePost */test/*test*.rb :make % |silent clist|copen
 
 "au BufWritePost *_spec.rb !spec %
 "au BufWritePost *_spec.rb :silent make % |silent clist|copen

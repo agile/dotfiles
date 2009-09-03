@@ -1,5 +1,4 @@
 export EDITOR='vim'
-export VISUAL='gvim -f'
 export CVS_RSH='ssh'
 export CDPATH='.:/home/mike/Desktop:/var/www/sites:/usr/src:~'
 
@@ -15,8 +14,10 @@ alias grep='grep --colour=auto'
 #bind '"\t":menu-complete'
 
 
+# Only hippies allowed
 if [ "${HOSTNAME}" == 'dirtyhippie' ]; then
-  keychain ~/.ssh/id_dsa
+  keychain ~/.ssh/id_dsa ~/.ssh/id_rsa
   source ~/.keychain/$(hostname)-sh
+  export VISUAL='gvim -f'
 fi
 

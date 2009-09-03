@@ -1,14 +1,14 @@
 9
 
 dir
-79
+83
 http://svn.tritarget.org/xmledit/trunk
 http://svn.tritarget.org/xmledit
 
 
 
-2008-10-16T14:01:12.998416Z
-78
+2009-02-17T11:04:49.178160Z
+83
 suki
 
 
@@ -66,10 +66,10 @@ file
 
 
 
-2009-01-17T17:01:22.000000Z
-eaa8d1d8beed358c897a7cdf7f5085a1
-2008-10-16T14:01:12.998416Z
-78
+2009-02-24T05:05:06.000000Z
+a0af48cdfbc6e8ac37149953cfc41a5d
+2009-02-17T11:04:49.178160Z
+83
 suki
 has-props
 
@@ -92,5 +92,5 @@ has-props
 
 
 
-32136
+32429
 

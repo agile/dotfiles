@@ -101,4 +101,8 @@ fi
 if [ -f ~/.bash_prompt ]; then
     . ~/.bash_prompt
 fi
+if [ -f ~/.bash_path ] ; then
+  . ~/.bash_path
+fi
 
+if [ -f ~/.rvm/bin/rvm ] ; then source ~/.rvm/bin/rvm ; fi
