@@ -1,0 +1,1 @@
+../../../linked_modules/swapit/after/ftplugin/htmldjango_swapit.vim

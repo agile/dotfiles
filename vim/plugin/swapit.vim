@@ -1,0 +1,1 @@
+../../linked_modules/swapit/plugin/swapit.vim
