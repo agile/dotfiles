@@ -22,3 +22,6 @@
 [submodule "linked_modules/vim-ruby-debugger"]
 	path = linked_modules/vim-ruby-debugger
 	url = git://github.com/astashov/vim-ruby-debugger.git
+[submodule "linked_modules/vim-fugitive"]
+	path = linked_modules/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
