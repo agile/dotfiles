@@ -30,6 +30,11 @@ set wildmode=list:longest,full
 set mouse=a
 "set ballooneval
 
+" One of my most common typos
+iabbrev conifg config
+iabbrev Conifg Config
+iabbrev CONIFG CONFIG
+
 "map Q to something useful
 noremap Q gq
  
