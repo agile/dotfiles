@@ -1,6 +1,6 @@
 export EDITOR='vim'
 export CVS_RSH='ssh'
-export CDPATH='.:/home/mike/Desktop:/var/www/sites:/usr/src:~'
+export CDPATH=".:${HOME}:${HOME}/ftw:${HOME}/collective:${HOME}/Desktop"
 
 alias ap='sudo apt-get update;sudo apt-get -uf dist-upgrade'
 

@@ -1,3 +1,4 @@
+set noballooneval
 set nocompatible
 set nospell
 let loaded_matchparen = 1
@@ -19,7 +20,7 @@ set tw=0
 set nonumber
 set incsearch
 set nohls
-set vb
+"set vb
 set backupcopy=yes
 set ignorecase
 "set swb=split
@@ -28,6 +29,8 @@ set wildmode=list:longest,full
 " this will allow you to use the mouse in console mode, but at the cost of
 " losing the ability to copy/paste it seems..
 set mouse=a
+
+" popup balloons
 "set ballooneval
 
 " One of my most common typos
@@ -160,3 +163,4 @@ hi User7 term=inverse,bold cterm=inverse,bold gui=bold ctermfg=darkblue ctermbg=
 "let g:StatusLines{0}='%*[%n]%6*[%l,%v]%*[%{&ff}]%5*%y%2*%F%1*%m%r%h%w%* %=[%{strlen(&enc)?&enc:"is not set"}][ASC=%03.3b][HEX=%02.2B][%l/%L][%p%%]%*'
 "let &statusline='%*[%n]%6*[%l,%v]%*[%{&ff}]%5*%y%2*%F%1*%m%r%h%w%* %=[%{strlen(&enc)?&enc:"is not set"}][ASC=%03.3b][HEX=%02.2B][%l/%L][%p%%]%*'
 let &statusline='%*[%n]%6*[%l,%v]%*[%{&ff}]%5*%y%2*%F%1*%m%r%h%w%* %=[%l/%L][%p%%]%*'
+set noballooneval
