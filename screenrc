@@ -1,0 +1,5 @@
+# Pretty status bar at the bottom.
+hardstatus alwayslastline 
+hardstatus string "%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m/%d %{W}%c %{g}]"
+multiuser on
+

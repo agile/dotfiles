@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 26
-/xmledit/!svn/ver/78/trunk
+/xmledit/!svn/ver/83/trunk
 END
 xml-README.txt
 K 25
@@ -13,5 +13,5 @@ xml.vim
 K 25
 svn:wc:ra_dav:version-url
 V 34
-/xmledit/!svn/ver/78/trunk/xml.vim
+/xmledit/!svn/ver/83/trunk/xml.vim
 END

@@ -1,0 +1,1 @@
+../../../linked_modules/swapit/after/ftplugin/python_swapit.vim

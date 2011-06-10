@@ -26,8 +26,18 @@
   stat = "status"
   spull = !git svn fetch && git svn rebase # fetch and rebase from svn repository
   spush = !git svn dcommit # push keeping each local commit as atomic.
-  rlog = log --pretty=format:\"%h %Cblue%cr%Creset %cn %Cgreen%s%Creset\"
+  tlog = log --pretty=format:\"%h %Cblue%ad%Creset %an %Cgreen%s%Creset\"
+  rlog = log --pretty=format:\"%h %Cblue%ar%Creset %an %Cgreen%s%Creset\"
+  rlogc = log --pretty=format:\"%h %Cblue%cr%Creset %cn %Cgreen%s%Creset\"
+  head = !git log -n 1 --pretty=\"format:%h %Cred%ar%Creset %an - %Cred%s%Creset\"
+  #topush = !git log origin/branchname../branchname --pretty=format:\"%h %Cblue%cr%Creset %cn %Cgreen%s%Creset\"
+  #
 [giggle]
 	compact-mode = false
-	main-window-maximized = false
-	main-window-geometry = 1439x875+386+25
+	main-window-maximized = true
+	main-window-geometry = 0x0+0+0
+	main-window-view = HistoryView
+	history-view-vpane-position = 865
+	file-view-vpane-position = 662
+[push]
+	default = current

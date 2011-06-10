@@ -19,3 +19,12 @@
 [submodule "linked_modules/nerdtree"]
 	path = linked_modules/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule "linked_modules/vim-fugitive"]
+	path = linked_modules/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "linked_modules/perl-completion"]
+	path = linked_modules/perl-completion
+	url = git://github.com/c9s/perl-completion.vim.git
+[submodule "linked_modules/libperl.vim"]
+	path = linked_modules/libperl.vim
+	url = git://github.com/c9s/libperl.vim.git
