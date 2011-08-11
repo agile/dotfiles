@@ -35,8 +35,11 @@ function myprompt {
   #PS1="$NUTTN\u@\h:\w\[\$(git_prompt)\$BRANCH\]$WHITE\$$NUTTN "
   #PS1="\u@\h:\w\$(git_prompt)\$ "
 
-  #PS1="${NUTTN}${GREEN}\u@\h:\w${NUTTN}${CYAN}\$(git_prompt)${WHITE}\$${NUTTN} "
-  PS1="${NUTTN}${GREEN}\u@\h:\w${NUTTN}${CYAN}\$(__git_ps1)${WHITE}\$${NUTTN} "
+  if [ "$(type -t __git_ps1 2>/dev/null)" = "function" ]; then
+    PS1="${NUTTN}${GREEN}\u@\h:\w${NUTTN}${CYAN}\$(__git_ps1)${WHITE}\$${NUTTN} "
+  else
+    PS1="${NUTTN}${GREEN}\u@\h:\w${NUTTN}${CYAN}\$(git_prompt)${WHITE}\$${NUTTN} "
+  fi
 }
 
 myprompt
