@@ -12,11 +12,3 @@ alias grep='grep --colour=auto'
 
 #set -o vi
 #bind '"\t":menu-complete'
-
-
-# Only hippies allowed
-# if [ "${HOSTNAME}" == 'dirtyhippie' ]; then
-#   keychain ~/.ssh/id_dsa ~/.ssh/id_rsa
-#   source ~/.keychain/$(hostname)-sh
-#   export VISUAL='gvim -f'
-# fi
