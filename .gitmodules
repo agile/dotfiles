@@ -6,7 +6,7 @@
 	url = git://github.com/tpope/vim-rails.git
 [submodule "linked_modules/vim-git"]
 	path = linked_modules/vim-git
-	url = git://git.tpope.net/vim-git.git
+	url = https://github.com/tpope/vim-git.git
 [submodule "linked_modules/vim-scmdiff"]
 	path = linked_modules/vim-scmdiff
 	url = git://github.com/agile/vim-scmdiff.git
