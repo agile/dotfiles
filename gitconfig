@@ -16,7 +16,6 @@
   color = auto
 [alias]
   co = "checkout"
-  #ci = "commit -a -v"
   ci = "commit"
   unmerge = "reset --hard ORIG_HEAD"
   lsbr = "branch -a"
@@ -30,8 +29,25 @@
   rlog = log --pretty=format:\"%h %Cblue%ar%Creset %an %Cgreen%s%Creset\"
   rlogc = log --pretty=format:\"%h %Cblue%cr%Creset %cn %Cgreen%s%Creset\"
   head = !git log -n 1 --pretty=\"format:%h %Cred%ar%Creset %an - %Cred%s%Creset\"
-  #topush = !git log origin/branchname../branchname --pretty=format:\"%h %Cblue%cr%Creset %cn %Cgreen%s%Creset\"
-  #
+  last = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:iso) %(authoremail) %09branch: %(refname:short)'
+  rlast = for-each-ref --sort=-committerdate refs/remotes/ --format='%(committerdate:iso) %(authoremail) %09branch: %(refname:short)'
+
+  # re: https://gist.github.com/1203187
+  prunelocal = !sh -c 'git branch --merged | grep -v "^*" | xargs git branch -d'
+  pruneorigin = prune-remote origin
+
+  ##################
+  # Helper aliases #
+  ##################
+
+  # prune-remote <remote name>
+  prune-remote = !sh -c 'git fetch $1 && git remote-master-merged $1 | xargs git push --delete $1' -
+
+  # remote-master-merged <remote name>
+  remote-master-merged = !sh -c 'git remote-merged-refs \"$1\" master' -
+
+  # remote-merged-refs <remote name> <destination branch name>
+  remote-merged-refs = !sh -c 'git branch -r --merged $2 | grep \"^  $1/\" | cut -d/ -f2- | grep -vx $2' -
 [giggle]
 	compact-mode = false
 	main-window-maximized = true
