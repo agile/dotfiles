@@ -164,3 +164,9 @@ hi User7 term=inverse,bold cterm=inverse,bold gui=bold ctermfg=darkblue ctermbg=
 "let &statusline='%*[%n]%6*[%l,%v]%*[%{&ff}]%5*%y%2*%F%1*%m%r%h%w%* %=[%{strlen(&enc)?&enc:"is not set"}][ASC=%03.3b][HEX=%02.2B][%l/%L][%p%%]%*'
 let &statusline='%*[%n]%6*[%l,%v]%*[%{&ff}]%5*%y%2*%F%1*%m%r%h%w%* %=[%l/%L][%p%%]%*'
 "set noballooneval
+"
+
+" Copy and paste short cuts
+imap <C-V> <ESC>"+gPa
+vmap <C-C> "+y
+
