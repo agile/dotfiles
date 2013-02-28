@@ -19,9 +19,6 @@
 [submodule "linked_modules/nerdtree"]
 	path = linked_modules/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "linked_modules/vim-fugitive"]
-	path = linked_modules/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
 [submodule "linked_modules/perl-completion"]
 	path = linked_modules/perl-completion
 	url = git://github.com/c9s/perl-completion.vim.git
@@ -37,3 +34,6 @@
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "vim/bundle/vim-fugative"]
+	path = vim/bundle/vim-fugative
+	url = git://github.com/tpope/vim-fugitive.git
