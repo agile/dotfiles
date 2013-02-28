@@ -13,9 +13,6 @@
 [submodule "linked_modules/nerdcommenter"]
 	path = linked_modules/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule "linked_modules/nerdtree"]
-	path = linked_modules/nerdtree
-	url = git://github.com/scrooloose/nerdtree.git
 [submodule "linked_modules/perl-completion"]
 	path = linked_modules/perl-completion
 	url = git://github.com/c9s/perl-completion.vim.git
