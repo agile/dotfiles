@@ -11,10 +11,10 @@
 echo "Updating/initializing submodules"
 git submodule init
 git submodule update
-for i in `ls -1d linked_modules/*.svn`; do
-  echo "updating $i svn repo"
-  svn up $i
-done
+# for i in `ls -1d linked_modules/*.svn`; do
+#   echo "updating $i svn repo"
+#   svn up $i
+# done
 
 for i in `ls -1`; do 
   DEST="${HOME}/.${i}"
