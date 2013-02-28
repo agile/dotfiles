@@ -20,6 +20,8 @@ if [ -n "$PS1" ]; then
   # Add timestamps to the history file
   HISTTIMEFORMAT='%F %T '
   
+  PROMPT_COMMAND='history -a'
+  
   # check the window size after each command and, if necessary,
   # update the values of LINES and COLUMNS.
   shopt -s checkwinsize
@@ -116,4 +118,9 @@ if [ -n "$PS1" ]; then
   # -- end rip config -- #
 fi
 if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
+if [[ -s ~/nvm/nvm.sh ]] ; then source ~/nvm/nvm.sh ; fi
+
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
 
