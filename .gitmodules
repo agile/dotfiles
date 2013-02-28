@@ -10,9 +10,6 @@
 [submodule "linked_modules/vim-cucumber"]
 	path = linked_modules/vim-cucumber
 	url = git://github.com/tpope/vim-cucumber.git
-[submodule "linked_modules/nerdcommenter"]
-	path = linked_modules/nerdcommenter
-	url = git://github.com/scrooloose/nerdcommenter.git
 [submodule "linked_modules/perl-completion"]
 	path = linked_modules/perl-completion
 	url = git://github.com/c9s/perl-completion.vim.git
