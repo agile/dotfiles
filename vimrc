@@ -1,3 +1,6 @@
+runtime ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
 "set noballooneval
 set nocompatible
 set nospell
