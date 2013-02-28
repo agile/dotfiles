@@ -7,9 +7,6 @@
 [submodule "linked_modules/vim-git"]
 	path = linked_modules/vim-git
 	url = https://github.com/tpope/vim-git.git
-[submodule "linked_modules/vim-scmdiff"]
-	path = linked_modules/vim-scmdiff
-	url = https://github.com/ghewgill/vim-scmdiff.git
 [submodule "linked_modules/vim-cucumber"]
 	path = linked_modules/vim-cucumber
 	url = git://github.com/tpope/vim-cucumber.git
