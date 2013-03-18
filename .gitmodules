@@ -49,3 +49,6 @@
 [submodule "vim/bundle/vim-preview"]
 	path = vim/bundle/vim-preview
 	url = https://github.com/agile/vim-preview.git
+[submodule "vim/bundle/vim-coffee-script"]
+	path = vim/bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
